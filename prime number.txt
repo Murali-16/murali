@@ -1,0 +1,46 @@
+ protected void button1_Click(object sender, EventArgs e)
+        {
+            int prime = int.Parse(txtbox1.Text);
+            int i;
+            int c = 0;
+            int factorial=1;
+
+            for (i = 1; i <= prime; i++)
+            {
+                if (prime % i == 0)
+                {
+                    c++;
+                }
+
+
+            }
+            if (c == 2)
+            {
+                txtbox2.Text = prime.ToString("It is Prime Number");
+                if (i==1)
+                {
+                    factorial = factorial * i;
+                    txtbox3.Text = factorial.ToString();
+                }
+            }
+            else
+            {
+                txtbox2.Text = prime.ToString("It is not a prime Number");
+            }
+           
+           
+            
+            
+
+        }
+    }
+}
+
+
+
+                while (i <= prime)
+                {
+                    factorial = factorial * i;
+                    i++;
+                    txtbox3.Text = factorial.ToString();
+                }

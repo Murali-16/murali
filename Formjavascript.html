@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form  Javascript</title>
+</head>
+     <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+    <link href="../bootstrap.min.css" rel="stylesheet" />
+    <script src="../bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            text-align: center;
+            font-family: 'Arial Rounded MT';
+           background-color:#A3C1AD;
+            width:450px;
+            margin-bottom:100px;
+            margin-top:2px;
+            padding-bottom:15px;
+            padding-top:20px;
+           
+            
+
+            
+        }
+        label {
+            text-align: left;
+        }
+   
+       
+        
+        
+      
+        
+
+            
+        
+       
+        
+    </style>
+<body>
+  
+   <div class="container ">
+      
+    
+    <form>
+        
+        <div class="d1">
+
+  
+      
+        <label> FirstName <input type="text" id="fname" class="form-control"  name="fname" placeholder="fname" /></label><br /><br />
+            
+             </div>
+        <div class="d2">
+   
+          <label> LastName <input type="text" id="lname" class="form-control" name="lname" placeholder="lname" /></label><br /><br />
+            </div>
+        <div  class="d3">
+   
+          <label> E-mail   <input type="email" id="email" class="form-control" name="email" placeholder="e-mail"  /></label><br /><br />
+            </div>
+        <div class="d4">
+   
+             <label> Password  <input type="password" id="password" class="form-control" name="password" placeholder="password" /></label><br /><br />
+            </div>
+        <div class="d5">
+       
+             <label> Retype-Password   <input type="password" id="re-password" class="form-control" name="re-password" onblur="fun1()" /></label><br /><br />
+            </div>
+        <div class="d6">
+     
+          <label> MobileNumber   <input type="number" id="number" class="form-control"  name="number"  onblur="fun2()" /></label><br /><br />
+            </div>
+        <div class="d7">
+    
+             <label> Age   <input type="number" id="number1" class="form-control" name="number" onblur="fun3()" /></label><br /><br />
+            </div>
+        <div class="d8">
+        <label> Gender <select id="select" class="form-control" name="select"  ><option></option><option>Male</option><option>Female</option></select></label><br /><br />
+            </div>
+        <div class="d9">
+        <input type="checkbox" id="checkbox"  name="checkbox"  /> <label>I agree</label><br /><br />
+            </div>
+        <div class="d10">
+        <input type="button" value="submit"  class="btn btn-danger" name="submit"  onclick="function3()"/>
+       
+       </div>
+           
+
+        </form>
+    <script>
+        function function3() {
+            
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var Repassword = document.getElementById("re-password").value;
+            var Mobile = document.getElementById("number").value;
+            var Age = document.getElementById("number1").value;
+            var Gender = document.getElementById("select").value;
+            var checkbox = document.getElementById("checkbox");
+            if (fname == null || fname == "") {
+                alert(" First name must be filled");
+                return false;
+
+            }
+
+            if (lname == null || lname == "") {
+                alert(" Last name must be fill");
+                return false;
+            }
+            if (email == null || email == "") {
+                alert(" email name must be fill");
+                return false;
+            }
+            if (password == null || password == "") {
+                alert(" password must be fill");
+                return false;
+            }
+            if (Repassword == null || Repassword == "") {
+                alert(" Repassword must be fill");
+                return false;
+            }
+            if (Mobile == null) {
+                alert(" Mobile Number must be fill");
+                return false;
+
+            }
+           
+            if (Age == null || Age == "") {
+                alert(" Age must be fill");
+                return false;
+
+            }
+            if (Gender == null || Gender == "") {
+                alert(" Gender must be fill");
+                return false;
+
+            }
+
+            
+            if  (checkbox.checked == false){
+                
+                alert("Kindly agree this form");
+                return false;
+                
+               
+                
+            }
+            else 
+
+                alert("submitted successfully");
+                return false;
+            }
+        
+        
+        
+        function fun1() {
+            var password1 = document.getElementById("password").value;
+            var repassword = document.getElementById("re-password").value;
+            if (password1 == repassword) {
+                return false;
+            }
+            if (password1 != repassword) {
+                alert(" password mismatched");
+                return false;
+            }
+        }
+        function fun2() {
+            var Mobile = document.getElementById("number").value;
+            if (Mobile < 10 || Mobile > 10) {
+                alert("please enter 10 digit numbers only");
+                return false;
+            }
+        }
+        function fun3() {
+            var Age = document.getElementById("number1").value;
+
+            if (Age < 20 || Age > 80) {
+                alert("Age must between 20 to 80");
+                return false;
+            }
+        }
+
+
+    </script>
+       </div>
+      
+
+</body>
+</html>

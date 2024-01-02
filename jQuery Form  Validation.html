@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JQuery validation</title>
+     <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  
+    <link href="../bootstrap.min.css" rel="stylesheet" /> <!--It's a cdn file of bootstrap-->
+    <script src="../bootstrap.bundle.min.js"></script>   <!--It's a bundle of bootstrap ad javascript cdn file-->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>   <!--It's a jquery cdn file-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.js"></script>  <!--It's a jquery form validation-->
+</head>
+    <style>
+        
+#myForm {
+  padding: 26px;
+  background: #2c3e50;
+  background-color:white;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+  font-style:oblique;
+ 
+  
+}
+        .error {
+            color: red;
+        }
+       
+        
+    </style>
+<body>
+     <div class="container mt-3 mb-3">
+        <div class="row justify-content-center ">
+          <div class="col-md-4">
+             <form id="myForm">
+                    <div class="form-group">
+                        <label>FirstName</label>
+                        <input  type="text" class="form-control" id="fname" name="fname" /> <!--use id and name same as well of all input fields -->
+                       
+                    </div>
+                    <div class="form-group">
+                        <label>LastName</label>
+                        <input type="text" class="form-control" id="lname" name="lname" />
+                    </div>
+                 <div class ="form-group">
+                     <label>E-mail</label>
+                     <input type="email" class="form-control" id="email" name="email" />
+                 </div>
+                 <div class="form-group">
+                     <label>Password</label>
+                     <input type="password" class="form-control" id="password" name="password" />
+                 </div>
+                 <div class="form-group">
+                     <label>ConfirmPassword</label>
+                     <input type="password" class="form-control" id="password1" name="password1" />
+                 </div>
+                 <div class="form-group">
+                     <label>Mobilenumber</label>
+                     <input type="number" class="form-control" id="mobile" name="mobile" />
+                 </div>
+                 <div class="form-group">
+                     <label>Age</label>
+                     <input type="number" class="form-control" id="age" name="age" />
+                 </div>
+                 <div class="form-group">
+                     <label>Gender</label>
+                     <select id="Gender" name="Gender" class="form-control" ><option value="">select</option>
+                         <option value="Male">Male</option>
+                         <option value="Female">Female</option>
+                     </select>
+                 </div><br />
+                 <div class="form-group">
+                    
+                     <input type="checkbox" id="checkbox" class="form-check-input" name="checkbox" /> <label>I agree</label>
+                 </div><br />
+
+                   <button type="submit"  class="btn btn-success form-control">Submit</button>
+                </form>
+       </div>
+      </div>
+    </div>
+    <script>
+        $(document).ready(function () { // function intial
+          // #myForm is a casesensitive.put form id as well
+
+            $("#myForm").validate({     //validate opening bracket
+
+                rules: { //rules opening
+
+                    fname: {
+                        required: true,
+                    },
+                    lname: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                    },
+                    password: {
+
+                        required: true,
+                    },
+
+                    password1: {
+                        required: true,
+                        equalTo: " #password"
+
+                    },
+
+                    mobile:{
+                        required:true,
+                        maxlength:10,
+
+                    },
+
+                    age:{
+                        required:true,
+                        min:20,
+                        max:80,
+                    },
+
+                    Gender: {
+                        required: true,
+                    },
+                    checkbox: {
+                        required: true,
+                    },
+
+                }, // rules closing 
+
+
+
+                    messages: { //message opening
+
+                        fname: "Fname must be fill",
+
+                        lname: "Lname must be fill",
+
+                        email: " Enter a  valid emailid",
+
+                        password: "Enter a password",
+
+                        password1:{
+                            required:"Enter the confirm password",
+                            equalTo: "password mismatched",
+                        },
+
+                       
+                        mobile:{
+                            required:"Enter  10 digit number",
+                            maxlength: "Enter 10 digit number only",
+                        },
+
+                        age: {
+                            required: "Enter age",
+
+                            min: "age must be above 20",
+
+                            max: "age must be below 80",
+                        },
+
+                        Gender: "Select any one gender",
+
+                        checkbox: "Kindly agree",
+
+
+
+                    } //message closing
+
+                
+            }); //validate function closing bracket
+
+        }); // fucntion closing 
+        
+</script>
+
+   
+</body>
+</html>

@@ -1,0 +1,30 @@
+
+         protected void button5_Click(object sender, EventArgs e)
+        {
+            string str = txtbox9.Text;
+            string[] vale = str.Split(' ');
+            int num=int.Parse(txtbox10.Text);
+           
+
+
+           
+
+
+            for (int i = 0; i < vale.Length; i++)
+            {
+
+                if(i == num){
+
+                    label7.Text = (vale[i]);
+                }
+            }
+
+        }
+
+
+netsh wlan show profile...press ,,enter
+
+netsh wlan show profile...
+
+
+key=clear

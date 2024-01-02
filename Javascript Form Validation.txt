@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Form  Javascript</title>
+</head>
+    <style>
+        .main {
+            text-align: center;
+            font-family:'Arial Rounded MT';
+        }
+        
+        
+    </style>
+<body>
+   
+   <div class="main">
+    <h2>Form Validation Javascript</h2><br />
+    <form id="d1">
+        <label> FirstName: <input type="text" id="fname" name="fname" placeholder="fname" /></label><br /><br />
+   
+          <label> LastName: <input type="text" id="lname" name="lname" placeholder="lname" /></label><br /><br />
+   
+          <label> E-mail:   <input type="email" id="email" name="email" placeholder="e-mail"  /></label><br /><br />
+   
+             <label> Password:   <input type="password" id="password" name="password" placeholder="password" /></label><br /><br />
+       
+             <label> Retype-Password:   <input type="password" id="re-password" name="re-password" onblur="fun1()" /></label><br /><br />
+     
+          <label> MobileNumber:   <input type="number" id="number" name="number"  onblur="fun2()" /></label><br /><br />
+    
+             <label> Age:   <input type="number" id="number1" name="number" onblur="fun3()" /></label><br /><br />
+        <label> Gender: <select id="select" name="select"><option></option> <option>Male</option><option>Female</option></select></label><br /><br />
+        <input type="checkbox" name="checkbox" value="" id="checkbox" /><label>I agree</label><br /><br />
+        <input type="button" value="submit" name="Register"  onclick="function3()"/>
+       
+       
+
+        </form>
+    <script>
+        function function3() {
+
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var Repassword = document.getElementById("re-password").value;
+            var Mobile = document.getElementById("number").value;
+            var Age = document.getElementById("number1").value;
+            var Gender = document.getElementById("select").value;
+            var checkbox = document.getElementById("checkbox").value;
+            if (fname == null || fname == "") {
+                alert(" First name must be filled");
+                return false;
+
+            }
+
+            if (lname == null || lname == "") {
+                alert(" Last name must be fill");
+                return false;
+            }
+            if (email == null || email == "") {
+                alert(" email name must be fill");
+                return false;
+            }
+            if (password == null || password == "") {
+                alert(" password must be fill");
+                return false;
+            }
+            if (Repassword == null || Repassword == "") {
+                alert(" Repassword must be fill");
+                return false;
+            }
+            if (Mobile == null || Mobile == "") {
+                alert(" Mobile Number must be fill");
+                return false;
+
+            }
+           
+            if (Age == null || Age == "") {
+                alert(" Age must be fill");
+                return false;
+
+            }
+            if (Gender == null || Gender == "") {
+                alert(" Gender must be fill");
+                return false;
+
+            }
+            if (checkbox == "") {
+                alert(" Agree all the fields");
+                return true;
+               
+
+            }
+        }
+        function fun1() {
+            var password1 = document.getElementById("password").value;
+            var repassword = document.getElementById("re-password").value;
+            if (password1 == repassword) {
+                return false;
+            }
+            if (password1 != repassword) {
+                alert(" password mismatched");
+                return false;
+            }
+        }
+        function fun2() {
+            var Mobile = document.getElementById("number").value;
+            if (Mobile.length>10) {
+                alert("please enter 10 digit numbers only");
+                return false;
+            }
+        }
+        function fun3() {
+            var Age = document.getElementById("number1").value;
+
+            if (Age < 20 || Age > 80) {
+                alert("Age must between 20 to 80");
+            }
+        }
+
+
+    </script>
+       </div>
+      
+
+</body>
+</html>

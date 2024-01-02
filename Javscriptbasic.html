@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>JAVASCRIPT</title>
+    <style>
+       
+  
+
+       
+    </style>
+</head>
+    
+        
+
+<body>
+
+    
+<h2>Use JavaScript to Change Text</h2>
+<p>This example writes "Hello JavaScript!" into an HTML element with id="demo":</p>
+
+<p id="demo"></p>
+<p id="name"></p>
+<p id="sun"></p>
+    
+     <div class="d2" >
+      
+    <label>First Name: <input type="text" placeholder="fname" id="fname" name="fname" /></label>
+          <label>Last Name: <input type="text" placeholder="lname" id="lname" name="lname" /></label>
+     
+
+   <input type="button" value="Display" onclick="showname1()"/>
+    <span id ="Span1"></span><br />
+         </div> 
+
+   
+
+<script>
+    document.getElementById("demo").innerHTML = "Hello JavaScript!"
+    document.getElementById("name").innerHTML = "Hello Dom";
+    document.getElementById("sun").innerHTML = "JAVASCRIPT";
+    function showname1() {
+        var fname = document.getElementById("fname").value
+        var lname = document.getElementById("lname").value
+        document.getElementById("Span1").innerHTML = fname + lname;
+    }
+   
+    </script>
+       
+
+</body>
+</html>

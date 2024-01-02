@@ -1,0 +1,156 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>jQUERY OPERATORS</title>
+     <meta charset="utf-8"/>
+     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+</head>
+<body>
+     <h1>Welcome jQuery</h1>
+   
+    <form class="d1">
+    <label>Name: <input type="text" placeholder="Enter a name" id="myInput" name="name" /></label>
+   <button type="button" id="myBtn">Show Value</button>
+        <input type="text" id="text1" />
+       
+        </form><br /><br />
+     <form class="d2" >
+      
+    <label>First Name: <input type="text" placeholder="fname" id="fname" name="fname" /></label>
+     <label>Last Name: <input type="text" placeholder="lname" id="lname" name="lname" /></label>
+      <button type="button" id="myBtn1">Show Value</button>
+          <input type="text" id="text2" />
+       
+   
+         </form><br /> <br />
+    <form class="d3">
+
+        <label>Name: <input type="text" placeholder="Name" id="Name1" name="Name1"  /></label> 
+         <input type="text" id="text3" />
+
+      
+
+    </form><br /><br />
+     <form class="d4">
+
+        <label>Addition:    <input type="number" id="Number1" name="Number1" /></label>
+        <label> +      <input type="number" id="Number2" name="Number2" /></label>
+        <button type="button" id="myBtn2" >show Value</button>
+         <input type="number" id="number" />
+       
+
+    </form><br /> <br />
+    <form class="d5">
+
+        <label>Subtraction:    <input type="number" id="Number3" name="Number3" /></label>
+        <label> -      <input type="number" id="Number4" name="Number4" /></label>
+        <button type="button" id="myBtn3" >show Value</button>
+         <input type="number" id="number5" />
+       
+
+    </form><br /> <br />
+     <form class="d6">
+        <label>Airthmetic Numbers: <input type="number" id="numbox1" name="numbox1" /></label>
+      
+        <select id="operators" name="operators">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+        </select>
+        <input type="number" id="numbox2" name="numbox2" />
+           <button type="button" id="myBtn4" >show value</button>
+         <input type="number" id="number6" />
+       
+      
+
+    </form><br /><br />
+    <form class="d7">
+        <label>Find Even or Odd :<input type="number" id="num1" name="num1" /></label>
+         <button type="button" id="myBtn5" >show Value</button>
+         <input type="text" id="even1" />
+       
+       
+    </form>
+
+
+    <script>
+        $(document).ready(function () {
+            
+            $("#myBtn").click(function () { //#myBtn is a id of button id//
+                var inputname = $("#myInput").val();  //#myInput is a id of input field name//
+                $("#text1").val(inputname);
+            });
+        });
+        $(document).ready(function () {
+
+            $("#myBtn1").click(function () {
+                var inputname1 = $("#fname").val();
+                var inputname2 = $("#lname").val();
+                $("#text2").val(inputname1 + inputname2);
+            });
+        });
+        $(document).ready(function () {
+
+          $("#text3").mouseout(function() {
+                var inputname3 = $("#Name1").val();
+                $("#text3").val(inputname3);
+            });
+        });
+        $(document).ready(function () {
+
+            $("#myBtn2").click(function () {
+                var number1 = parseInt($("#Number1").val());  //parseInt is used to show in textbox as a integer value
+                var number2 = parseInt($("#Number2").val());
+                var sum = number1 + number2;
+                $("#number").val(sum);
+            });
+        });
+        $(document).ready(function () {
+
+            $("#myBtn3").click(function () {
+                var number3 = parseInt($("#Number3").val());
+                var number4 = parseInt($("#Number4").val());
+                var sub = number3 - number4;
+                $("#number5").val(sub);
+            });
+        });
+        $(document).ready(function () {
+
+            $("#myBtn4").click(function () {
+                var numbox1 = parseInt($("#numbox1").val());
+                var numbox2 = parseInt($("#numbox2").val());
+                var oper = $("#operators").val();
+                if (oper == '+') {
+
+                    $("#number6").val(numbox1 + numbox2);
+                }
+                if (oper == '-') {
+
+                    $("#number6").val(numbox1 - numbox2);
+                }
+                if (oper == '*') {
+                    $("#number6").val(numbox1 * numbox2);
+                }
+                if (oper == '/') {
+                    $("#number6").val(numbox1 / numbox2);
+                }
+            });
+        });
+        $(document).ready(function () {
+            $("#myBtn5").click(function () {
+                var number = $("#num1").val();
+
+                if (number % 2 == 0) {
+                    output = "It's a even number"
+                } else {
+                    output = " It is an Odd number"
+                }
+                $("#even1").val(output);
+            });
+        });
+
+    </script>
+</body>
+</html>

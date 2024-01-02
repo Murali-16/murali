@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>gg</title>
+</head>
+<body>
+    <form id="myForm">
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name" /></>
+  
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" /></>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" /></>
+  
+  <input type="submit" value="Submit"/>
+</form>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var isValid = true;
+
+            // Perform validation checks
+            if (name === "") {
+                alert("Name is required.");
+                isValid = false;
+            }
+
+            if (!isValidEmail(email)) {
+                alert("Invalid email address.");
+                isValid = false;
+            }
+
+            if (password.length < 8) {
+                alert("Password must be at least 8 characters.");
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        function isValidEmail(email) {
+            var pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return pattern.test(email);
+        }
+</script>
+
+
+
+</body>
+</html>
